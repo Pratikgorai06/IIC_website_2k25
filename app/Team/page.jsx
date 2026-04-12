@@ -367,7 +367,7 @@ const TeamSection = () => {
           id: 15,
           name: "Shashi Kumar",
           role: "Media",
-          image: "/team/shashi.png",
+          image: "/team/shashii.png",
           social: {
             email: "shashi.iic@bitsindri.ac.in",
             linkedin:
