@@ -93,30 +93,30 @@ const ESummitCard = () => {
                 <p className="text-sm text-slate-600"><b>Innovation & Tech</b></p>
                 <p className="mt-2 text-base font-semibold text-slate-950">
                   <div className="mt-3 space-y-2">
-  {["INNOVATHON", "TEXcelerate", "UDAAN", "BuildX-Expo"].map((item) => (
-    <div
-      key={item}
-      className="rounded-xl bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm"
-    >
-      • {item}
-    </div>
-  ))}
-</div>
+                    {["INNOVATHON", "TEXcelerate", "UDAAN", "BuildX-Expo"].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-xl bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm"
+                      >
+                        • {item}
+                      </div>
+                    ))}
+                  </div>
                 </p>
               </div>
               <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
                 <p className="text-sm text-slate-600"><b>Business & Finance</b></p>
                 <p className="mt-2 text-base font-semibold text-slate-950">
                   <div className="mt-3 space-y-2">
-  {["Being an Entrepreneur", "Equity Minds"].map((item) => (
-    <div
-      key={item}
-      className="rounded-xl bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm"
-    >
-      • {item}
-    </div>
-  ))}
-</div>
+                    {["Being an Entrepreneur", "Equity Minds"].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-xl bg-white px-3 py-2 text-sm font-medium text-slate-900 shadow-sm"
+                      >
+                        • {item}
+                      </div>
+                    ))}
+                  </div>
                 </p>
               </div>
             </div>

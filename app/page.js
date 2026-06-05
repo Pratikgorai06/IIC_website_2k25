@@ -13,8 +13,6 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
-      <E_Summit />
-
       <div className="md:min-h-screen h-fit w-full py-4">
         <div className="absolute w-full md:h-full flex justify-center md:items-end pt-24 md:pt-0 z-10 text-3xl lg:text-9xl font-bold tracking-wider text-gray-300/50">
           INCUBATION CENTRE
