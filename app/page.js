@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Hero from "./Home/components/Hero";
-import E_Summit from "./Home/components/E-Summit";
 import IntroIIC from "./Home/components/IntroIIC";
 import Events from "./Home/components/Events";
 import Resources from "./Home/components/Resources";
