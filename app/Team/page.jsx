@@ -9,8 +9,17 @@ import { useState } from "react";
 import Link from "next/link";
 
 const TeamSection = () => {
-  const [activeTeam, setActiveTeam] = useState("final");
+  const [activeTeam, setActiveTeam] = useState("executive");
   const [copiedId, setCopiedId] = useState(null);
+
+  const handleCopyEmail = (email, id) => {
+    if (!email || email === "#") return;
+    navigator.clipboard.writeText(email);
+    setCopiedId(id);
+    setTimeout(() => {
+      setCopiedId(null);
+    }, 2000);
+  };
 
   const faculties = [
     {
@@ -44,7 +53,7 @@ const TeamSection = () => {
       },
     },
     {
-      id: 13,
+      id: 4,
       name: "Dr. Rahul Kumar",
       role: "Convener",
       image: "/team/rahul.webp",
@@ -54,7 +63,7 @@ const TeamSection = () => {
       },
     },
     {
-      id: 4,
+      id: 5,
       name: "Dr. Mukesh Chandra",
       role: "Innovation Activity Coordinator",
       image: "/team/mukesh.webp",
@@ -64,7 +73,7 @@ const TeamSection = () => {
       },
     },
     {
-      id: 5,
+      id: 6,
       name: "Mr. Khustar Ansari",
       role: "Hackathon Coordinator",
       image: "/team/khustar.webp",
@@ -74,7 +83,7 @@ const TeamSection = () => {
       },
     },
     {
-      id: 6,
+      id: 7,
       name: "Mr. Vijay Besra",
       role: "ARIIA Coordinator",
       image: "/team/vijay.webp",
@@ -84,7 +93,7 @@ const TeamSection = () => {
       },
     },
     {
-      id: 7,
+      id: 8,
       name: "Dr. Kashif Hasan Kazmi",
       role: "Internal Event Coordinator",
       image: "/team/kashif.webp",
@@ -94,7 +103,7 @@ const TeamSection = () => {
       },
     },
     {
-      id: 8,
+      id: 9,
       name: "Mr. Izhar Hussain",
       role: "Internal Event Coordinator",
       image: "/team/fac.webp",
@@ -104,7 +113,7 @@ const TeamSection = () => {
       },
     },
     {
-      id: 9,
+      id: 10,
       name: "Mr. Sanjay Oraon",
       role: "IPR Activity Coordinator",
       image: "/team/sanjay.webp",
@@ -114,7 +123,7 @@ const TeamSection = () => {
       },
     },
     {
-      id: 10,
+      id: 11,
       name: "Dr. Priyanka Kumari",
       role: "NIRF Coordinator",
       image: "/team/mam.webp",
@@ -156,109 +165,13 @@ const TeamSection = () => {
   ];
 
   const students = {
-    final: {
+    executive: {
       name: "Executive Members",
       members: [
         {
           id: 1,
-          name: "Syed Adnan Ahmed",
-          role: "Chief Coordinator",
-          image: "/team/syedd.png",
-          social: {
-            email: "#",
-            linkedin: "#",
-            instagram: "#",
-          },
-        },
-        {
-          id: 2,
-          name: "Vivek Kumar Tiwari",
-          role: "Vice Chief Coordinator",
-          image: "/team/vivek_sir.png",
-          social: {
-            email: "#",
-            linkedin: "#",
-            instagram: "#",
-          },
-        },
-        {
-          id: 3,
-          name: "Manohar Jha",
-          role: "Secretary",
-          image: "/team/manoharr.png",
-          social: {
-            email: "manoharjha809@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/manohar-jha-1b1765257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/_manohar.jha_5?igsh=b2ZkYjExcjV2cmFq",
-          },
-        },
-        {
-          id: 4,
-          name: "Kashish Jain",
-          role: "Innovation Head",
-          image: "/team/kashish_mam.png",
-          social: {
-            email: "skashish2426@gmail.com",
-            linkedin: "https://www.linkedin.com/in/kashish-jain-a92b05256",
-            instagram: "https://www.instagram.com/kashish_7029",
-          },
-        },
-        {
-          id: 5,
-          name: "Harsh Bhargav",
-          role: "Technical Head",
-          image: "/team/Harsh.png",
-          social: {
-            email: "skashish2426@gmail.com",
-            linkedin: "#",
-            instagram: "#",
-          },
-        },
-        {
-          id: 4,
-          name: "Tisha Aggarwal",
-          role: "Community Engagement",
-          image: "/team/tisha.png",
-          social: {
-            email: "skashish2426@gmail.com",
-            linkedin: "https://www.linkedin.com/in/kashish-jain-a92b05256",
-            instagram: "https://www.instagram.com/kashish_7029",
-          },
-        },
-        {
-          id: 4,
-          name: "Amit Kumar Mishra",
-          role: "Design Head",
-          image: "/team/amit.png",
-          social: {
-            email: "skashish2426@gmail.com",
-            linkedin: "https://www.linkedin.com/in/kashish-jain-a92b05256",
-            instagram: "https://www.instagram.com/kashish_7029",
-          },
-        },
-      ],
-    },
-    third: {
-      name: "Associate Members",
-      members: [
-        {
-          id: 5,
-          name: "Adarsh Kumar",
-          role: "Technicals",
-          image: "/team/adarsh.webp",
-          social: {
-            email: "adarsh.iic@bitsindri.ac.in",
-            linkedin: "https://www.linkedin.com/in/adarsh-kumar-03a459200",
-            instagram:
-              "https://www.instagram.com/_aadi005?utm_source=qr&igsh=dmIzNDZqY3c2M2h6",
-          },
-        },
-        {
-          id: 6,
-          name: "Utsav Jha",
-          role: "Operations",
+          name: "Utsav Kumar Jha",
+          role: "Chief Coordinator, IIC",
           image: "/team/utsav.png",
           social: {
             email: "ukjha2004@gmail.com",
@@ -268,58 +181,9 @@ const TeamSection = () => {
           },
         },
         {
-          id: 7,
-          name: "Rahul Kumar",
-          role: "Community Engagement",
-          image: "/team/rahul.png",
-          social: {
-            email: "rahul.iic@bitsindri.ac.in",
-            linkedin:
-              "https://www.linkedin.com/in/rahul-kumar-98b607290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/im_rahul3651?igsh=MTVpd3BhZm5mYnl5MA==",
-          },
-        },
-        {
-          id: 8,
-          name: "Dhruv Gupta",
-          role: "Design",
-          image: "/team/dhruv.png",
-          social: {
-            email: "dhruv.iic@bitsindri.ac.in",
-            linkedin: "https://www.linkedin.com/in/dhruv-gupta-a70346292",
-            instagram:
-              "https://www.instagram.com/_0xdhruv?igsh=MXA4bWszMWIxYTdmbQ==",
-          },
-        },
-        {
-          id: 9,
-          name: "Kunal Kumar Sonkar",
-          role: "Startup & Incubation",
-          image: "/team/kunal.png",
-          social: {
-            email: "Kunal.iic@bitsindri.ac.in",
-            linkedin: "https://www.linkedin.com/kunal-sonkar-bits",
-            instagram:
-              "https://www.instagram.com/oye_kunaaal?igsh=MzV2eDR2emUzamt4",
-          },
-        },
-        {
-          id: 10,
-          name: "Shivangi Kumari",
-          role: "Innovation Program",
-          image: "/team/shivangi.png",
-          social: {
-            email: "shivangi.iic@bitsindri.ac.in",
-            linkedin: "https://www.linkedin.com/in/shivangi-kumari-67b927287/",
-            instagram:
-              "https://www.instagram.com/shiv_shiviiii_45?igsh=MXcxd2UxdWxvdmo4aA%3D%3D&utm_source=qr",
-          },
-        },
-        {
-          id: 11,
+          id: 2,
           name: "Shreya Pandey",
-          role: "Marketing",
+          role: "Vice-Chief Coordinator, IIC",
           image: "/team/shreya.png",
           social: {
             email: "pandeyshre19@gmail.com",
@@ -330,43 +194,57 @@ const TeamSection = () => {
           },
         },
         {
-          id: 12,
-          name: "Ayush Bhagat",
-          role: "Finance",
+          id: 3,
+          name: "Rahul Kumar",
+          role: "Secretary, IIC",
+          image: "/team/rahul.png",
+          social: {
+            email: "rahul.iic@bitsindri.ac.in",
+            linkedin:
+              "https://www.linkedin.com/in/rahul-kumar-98b607290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/im_rahul3651?igsh=MTVpd3BhZm5mYnl5MA==",
+          },
+        },
+        {
+          id: 4,
+          name: "Ayush Kumar Bhagat",
+          role: "Treasurer, IIC",
           image: "/team/ayush.png",
           social: {
             email: "ayush.iic@bitsindri.ac.in",
-            linkedin: "www.linkedin.com/in/ ayush-k-bhagat",
+            linkedin: "https://www.linkedin.com/in/ayush-k-bhagat",
             instagram:
               "https://www.instagram.com/ayush_26373?igsh=NTNmZmZzbTI0anE2",
           },
         },
         {
-          id: 13,
-          name: "Aastha Agarwal",
-          role: "Research & Development",
-          image: "/team/aastha.png",
+          id: 5,
+          name: "Aadarsh Kumar",
+          role: "Technical Head, IIC",
+          image: "/team/adarsh.png",
           social: {
-            email: "aastha.iic@bitsindri.ac.in",
-            linkedin: "https://www.linkedin.com/in/aastha-agarwal-043883294",
-            instagram: "https://www.instagram.com/aastha28._",
+            email: "adarsh.iic@bitsindri.ac.in",
+            linkedin: "https://www.linkedin.com/in/adarsh-kumar-03a459200",
+            instagram:
+              "https://www.instagram.com/_aadi005?utm_source=qr&igsh=dmIzNDZqY3c2M2h6",
           },
         },
         {
-          id: 14,
-          name: "Aman Kumar Arya",
-          role: "Editorial",
+          id: 6,
+          name: "Aman Arya",
+          role: "Editorial Head, IIC",
           image: "/team/aman_arya.png",
           social: {
             email: "aman.iic@bitsindri.ac.in",
-            linkedin: "www.linkedin.com/in/aman-arya-b8458b2b4",
+            linkedin: "https://www.linkedin.com/in/aman-arya-b8458b2b4",
             instagram: "https://www.instagram.com/amanarya7968/",
           },
         },
         {
-          id: 15,
+          id: 7,
           name: "Shashi Kumar",
-          role: "Media",
+          role: "Media Head, IIC",
           image: "/team/shashii.png",
           social: {
             email: "shashi.iic@bitsindri.ac.in",
@@ -376,26 +254,111 @@ const TeamSection = () => {
               "https://www.instagram.com/shashisuprabhat106?igsh=dTVhZnU4M2Riajli",
           },
         },
-      ],
-    },
-    second: {
-      name: "Coordinators",
-      members: [
         {
-          id: 16,
-          name: "Samir Kumar",
-          role: "Finance",
-          image: "/team/samir.png",
+          id: 8,
+          name: "Dhruv Gupta",
+          role: "Graphics & Design Head, IIC",
+          image: "/team/dhruv.png",
           social: {
-            email: "emailonebrown@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/samir-kumar-650520305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            email: "dhruv.iic@bitsindri.ac.in",
+            linkedin: "https://www.linkedin.com/in/dhruv-gupta-a70346292",
             instagram:
-              "https://www.instagram.com/i_samir17?igsh=MTB5Z3R2cjl1MmwxMQ==",
+              "https://www.instagram.com/_0xdhruv?igsh=MXA4bWszMWIxYTdmbQ==",
           },
         },
         {
-          id: 17,
+          id: 9,
+          name: "Shivangi Kumari",
+          role: "Innovation Head, IIC",
+          image: "/team/shivangi.png",
+          social: {
+            email: "shivangi.iic@bitsindri.ac.in",
+            linkedin: "https://www.linkedin.com/in/shivangi-kumari-67b927287/",
+            instagram:
+              "https://www.instagram.com/shiv_shiviiii_45?igsh=MXcxd2UxdWxvdmo4aA%3D%3D&utm_source=qr",
+          },
+        },
+        {
+          id: 10,
+          name: "Aastha Agarwal",
+          role: "Research & Development Head, IIC",
+          image: "/team/aastha.png",
+          social: {
+            email: "aastha.iic@bitsindri.ac.in",
+            linkedin: "https://www.linkedin.com/in/aastha-agarwal-043883294",
+            instagram: "https://www.instagram.com/aastha28._",
+          },
+        },
+        {
+          id: 11,
+          name: "Kunal Kumar Sonkar",
+          role: "Startup & Incubation Head, IIC",
+          image: "/team/kunal.png",
+          social: {
+            email: "Kunal.iic@bitsindri.ac.in",
+            linkedin: "https://www.linkedin.com/kunal-sonkar-bits",
+            instagram:
+              "https://www.instagram.com/oye_kunaaal?igsh=MzV2eDR2emUzamt4",
+          },
+        },
+      ],
+    },
+    // Space reserved for Associate Members
+    /*
+    associate: {
+      name: "Associate Members",
+      members: [
+        // Space for upcoming Associate Members
+      ],
+    },
+    */
+    second: {
+      name: "Coordinators",
+      members: [
+        // Technicals
+        {
+          id: 12,
+          name: "Bibek Kumar",
+          role: "Technicals",
+          image: "/team/bibek.png",
+          social: {
+            email: "bibekkumbhakr000@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/bibek-kumbhakar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/bibekkumbhakr000?igsh=MTN2NGhrdHJyZWp2YQ==",
+          },
+        },
+        {
+          id: 13,
+          name: "Aradhana Sharma",
+          role: "Technicals",
+          image: "/team/aradhna.png",
+          social: {
+            email: "sharmaarchi70046@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/aradhana-sharma-b486a7358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/aarchi34645?igsh=MWp3dDRmeHRiNDgzNA==",
+          },
+        },
+        {
+          id: 14,
+          name: "Piyush Dwivedi",
+          role: "Technicals",
+          image: "/team/piyush.png",
+          social: {
+            email: "piyushdwivedi8709@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/piyush-dwivedi-679319272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/piyush.dwivedi_27?igsh=MTc5dDI3OHZmMTVz",
+          },
+        },
+
+        // Design
+        {
+          id: 15,
           name: "Ravikant",
           role: "Design",
           image: "/team/ravikant.png",
@@ -407,6 +370,34 @@ const TeamSection = () => {
               "https://www.instagram.com/ravi15_12?igsh=cnFrcDRyaDVhNnNp",
           },
         },
+        {
+          id: 16,
+          name: "Vatsal Krishna",
+          role: "Design",
+          image: "/team/vatsal.png",
+          social: {
+            email: "Vatsal.kr85fri@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/vatsal-krishna-890093359?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/vatsalkrishn_?igsh=MTB3c3d1OWFocm44Yg==",
+          },
+        },
+        {
+          id: 17,
+          name: "Abhijeet Kumar Chauhan",
+          role: "Design",
+          image: "/team/abhijeet.png",
+          social: {
+            email: "abhijeetkumarchouhan5@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/abhijeet-chouhan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/realabhijeett?igsh=MTVuNWp6eHVmNDVnNg==",
+          },
+        },
+
+        // Editorial
         {
           id: 18,
           name: "Praveen Kumar Chaurasiya",
@@ -421,19 +412,6 @@ const TeamSection = () => {
         },
         {
           id: 19,
-          name: "Bibek Kumar",
-          role: "Technicals",
-          image: "/team/bibek.png",
-          social: {
-            email: "bibekkumbhakr000@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/bibek-kumbhakar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/bibekkumbhakr000?igsh=MTN2NGhrdHJyZWp2YQ==",
-          },
-        },
-        {
-          id: 20,
           name: "Mantasha Fatima",
           role: "Editorial",
           image: "/team/mantasha.webp",
@@ -446,20 +424,20 @@ const TeamSection = () => {
           },
         },
         {
-          id: 21,
-          name: "Abhas Kumar",
-          role: "Startup & Incubation",
-          image: "/team/abhas.png",
+          id: 20,
+          name: "Tanishq Raj",
+          role: "Editorial",
+          image: "/team/tanishq.png",
           social: {
-            email: "abhaskumarbardhan@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/abhas-kumar-bardhan-74b13132a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/abhas25_?igsh=ZnRxc3lpbThzYWho",
+            email: "tanishq.iic@bitsindri.ac.in",
+            linkedin: "https://www.linkedin.com/in/tanishq-raj58",
+            instagram: "https://www.instagram.com/tanishkraj58",
           },
         },
+
+        // Media
         {
-          id: 22,
+          id: 21,
           name: "Prajjwal Jha",
           role: "Media",
           image: "/team/prajjwal.png",
@@ -470,70 +448,22 @@ const TeamSection = () => {
           },
         },
         {
+          id: 22,
+          name: "Dipak Kumar Ram",
+          role: "Media",
+          image: "/team/dipak.png",
+          social: {
+            email: "deepakkrram70@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/deepak-chandrawanshi-a22631337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/invites/contact/?igsh=1t1althpx6hx1&utm_content=m3hraui",
+          },
+        },
+
+        // Innovation Program
+        {
           id: 23,
-          name: "Rakesh Kumar Pandey",
-          role: "Marketing",
-          image: "/team/rakesh.png",
-          social: {
-            email: "rakeshpandey5510@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/rakesh-pandey-493b7435b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-            instagram:
-              "https://www.instagram.com/iiamrakeshh?igsh=bTRwb2h3aWdsbzIy&utm_source=qr",
-          },
-        },
-        {
-          id: 24,
-          name: "Shashank Gupta",
-          role: "Operations",
-          image: "/team/shashank.png",
-          social: {
-            email: "shashank.sg.6002@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/shashank-gupta-230489338?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/i_have_no_idea000_?igsh=aHNrZGs3ZzB2bmZv&utm_source=ig_contact_invite",
-          },
-        },
-        {
-          id: 25,
-          name: "Rimsha",
-          role: "Finance",
-          image: "/team/rimsha.png",
-          social: {
-            email: "rimsha.iic@bitsindri.ac.in",
-            linkedin:
-              "https://www.linkedin.com/in/rimsha-taslim-5a8724336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/rimshaaax._?igsh=YWtjMGppMXF2dTlt",
-          },
-        },
-        {
-          id: 26,
-          name: "Tanishq Raj",
-          role: "Editorial",
-          image: "/team/tanishq.png",
-          social: {
-            email: "tanishq.iic@bitsindri.ac.in",
-            linkedin: "https://www.linkedin.com/in/tanishq-raj58",
-            instagram: "https://www.instagram.com/tanishkraj58",
-          },
-        },
-        {
-          id: 27,
-          name: "Anish Kumar",
-          role: "Operations",
-          image: "/team/anish.png",
-          social: {
-            email: "anish2406012@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/anish-kumar-29a9a2336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/anish_official_71?igsh=Nng0OHd2MmM2eDNt",
-          },
-        },
-        {
-          id: 28,
           name: "Prakhar Pratyush Jha",
           role: "Innovation Program",
           image: "/team/prakhar.png",
@@ -546,109 +476,7 @@ const TeamSection = () => {
           },
         },
         {
-          id: 29,
-          name: "Aradhana Sharma",
-          role: "Technicals",
-          image: "/team/aradhna.png",
-          social: {
-            email: "sharmaarchi70046@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/aradhana-sharma-b486a7358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/aarchi34645?igsh=MWp3dDRmeHRiNDgzNA==",
-          },
-        },
-        {
-          id: 30,
-          name: "Varsha Rani",
-          role: "Community Engagement",
-          image: "/team/varsha.png",
-          social: {
-            email: "varshu1929@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/varsha-rani-a33078294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/varsharani_2005?igsh=ZDc2ZTkxOTV3aGVu",
-          },
-        },
-        {
-          id: 31,
-          name: "Vatsal Krishna",
-          role: "Design",
-          image: "/team/vatsal.png",
-          social: {
-            email: "Vatsal.kr85fri@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/vatsal-krishna-890093359?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/vatsalkrishn_?igsh=MTB3c3d1OWFocm44Yg==",
-          },
-        },
-        {
-          id: 32,
-          name: "Diptanshu Jaiswal",
-          role: "Marketing",
-          image: "/team/diptanshu.png",
-          social: {
-            email: "diptanshujaiswal2000@gmail.com",
-            linkedin: "http://linkedin.com/in/diptanshu-jaiswal-b765b421b",
-            instagram:
-              "https://www.instagram.com/diptanshu.jaiswal?igsh=bW52MnVzY2Zja2V0",
-          },
-        },
-        {
-          id: 33,
-          name: "Pratiush Chourasia",
-          role: "Research & Development",
-          image: "/team/pratuish.png",
-          social: {
-            email: "chourasiapratiush@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/pratiush-chourasia-95a510229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/pratiush2023?igsh=am91M3cyN2V2YXE5",
-          },
-        },
-        {
-          id: 34,
-          name: "Dipak Kumar Ram",
-          role: "Media",
-          image: "/team/dipak.png",
-          social: {
-            email: "deepakkrram70@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/deepak-chandrawanshi-a22631337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/invites/contact/?igsh=1t1althpx6hx1&utm_content=m3hraui",
-          },
-        },
-        {
-          id: 35,
-          name: "Shital Sandhya",
-          role: "Marketing",
-          image: "/team/shital.png",
-          social: {
-            email: "sandhyashital4801@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/shital-sandhya-b83085320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram: "https://www.instagram.com/SHITAL_45341",
-          },
-        },
-        {
-          id: 36,
-          name: "Megha",
-          role: "Startup & Incubation",
-          image: "/team/megha.png",
-          social: {
-            email: "megh.workk@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/megha-s-708717338?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/_megh.a_._?igsh=MW92MGEyc2Vqajd6bA==",
-          },
-        },
-        {
-          id: 37,
+          id: 24,
           name: "Kajal",
           role: "Innovation Program",
           image: "/team/kajal.png",
@@ -661,20 +489,7 @@ const TeamSection = () => {
           },
         },
         {
-          id: 38,
-          name: "Krish",
-          role: "Community Engagement",
-          image: "/team/Krish.png",
-          social: {
-            email: "krrish01sahu@gmail.com",
-            linkedin:
-              "https://www.linkedin.com/in/krrish-raj-333926335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-            instagram:
-              "https://www.instagram.com/krrish6887?igsh=MWgwc2k0NWVmd2Vt",
-          },
-        },
-        {
-          id: 39,
+          id: 25,
           name: "Ankit Kumar",
           role: "Innovation Program",
           image: "/team/ankit.png",
@@ -684,21 +499,23 @@ const TeamSection = () => {
             instagram: "https://www.instagram.com/_ankit.kr___",
           },
         },
+
+        // Research & Development
         {
-          id: 40,
-          name: "Vineet Verma",
-          role: "Startup & Incubation",
-          image: "/team/vineet.png",
+          id: 26,
+          name: "Pratiush Chourasia",
+          role: "Research & Development",
+          image: "/team/pratuish.png",
           social: {
-            email: "vineetverma163@gmail.com",
+            email: "chourasiapratiush@gmail.com",
             linkedin:
-              "https://www.linkedin.com/in/vineet-verma-b81a0a361?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "https://www.linkedin.com/in/pratiush-chourasia-95a510229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             instagram:
-              "https://www.instagram.com/__vineet.verma?igsh=MWo1eHFyZzE4cXlrdg==",
+              "https://www.instagram.com/pratiush2023?igsh=am91M3cyN2V2YXE5",
           },
         },
         {
-          id: 41,
+          id: 27,
           name: "Shivam Kumar Singh",
           role: "Research & Development",
           image: "/team/shivam.png",
@@ -710,32 +527,77 @@ const TeamSection = () => {
               "https://www.instagram.com/shivam.singh.03?igsh=NHk2YXJrZ2R4MGFp",
           },
         },
+
+        // Startup & Incubation
         {
-          id: 42,
-          name: "Parth Kumar",
-          role: "Marketing",
-          image: "/team/parth.png",
+          id: 28,
+          name: "Abhas Kumar",
+          role: "Startup & Incubation",
+          image: "/team/abhas.png",
           social: {
-            email: "pa825408@gmail.com",
-            linkedin: "https://www.linkedin.com/in/parth-kumar-b023a836a",
-            instagram: "https://www.instagram.com/itsparth_557",
-          },
-        },
-        {
-          id: 43,
-          name: "Abhijeet Kumar Chauhan",
-          role: "Design",
-          image: "/team/abhijeet.png",
-          social: {
-            email: "abhijeetkumarchouhan5@gmail.com",
+            email: "abhaskumarbardhan@gmail.com",
             linkedin:
-              "https://www.linkedin.com/in/abhijeet-chouhan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "https://www.linkedin.com/in/abhas-kumar-bardhan-74b13132a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             instagram:
-              "https://www.instagram.com/realabhijeett?igsh=MTVuNWp6eHVmNDVnNg==",
+              "https://www.instagram.com/abhas25_?igsh=ZnRxc3lpbThzYWho",
           },
         },
         {
-          id: 44,
+          id: 29,
+          name: "Megha",
+          role: "Startup & Incubation",
+          image: "/team/megha.png",
+          social: {
+            email: "megh.workk@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/megha-s-708717338?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/_megh.a_._?igsh=MW92MGEyc2Vqajd6bA==",
+          },
+        },
+        {
+          id: 30,
+          name: "Vineet Verma",
+          role: "Startup & Incubation",
+          image: "/team/vineet.png",
+          social: {
+            email: "vineetverma163@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/vineet-verma-b81a0a361?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/__vineet.verma?igsh=MWo1eHFyZzE4cXlrdg==",
+          },
+        },
+
+        // Community Engagement
+        {
+          id: 31,
+          name: "Varsha Rani",
+          role: "Community Engagement",
+          image: "/team/varsha.png",
+          social: {
+            email: "varshu1929@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/varsha-rani-a33078294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/varsharani_2005?igsh=ZDc2ZTkxOTV3aGVu",
+          },
+        },
+        {
+          id: 32,
+          name: "Krish",
+          role: "Community Engagement",
+          image: "/team/krish.png",
+          social: {
+            email: "krrish01sahu@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/krrish-raj-333926335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/krrish6887?igsh=MWgwc2k0NWVmd2Vt",
+          },
+        },
+        {
+          id: 33,
           name: "Sudhir Verma",
           role: "Community Engagement",
           image: "/team/sudhir.png",
@@ -747,29 +609,206 @@ const TeamSection = () => {
               "https://www.instagram.com/sudhir4_?igsh=MTN4aThrMmgyZHJyOQ==",
           },
         },
+
+        // Marketing
         {
-          id: 45,
-          name: "Piyush Dwivedi",
-          role: "Technicals",
-          image: "/team/piyush.png",
+          id: 34,
+          name: "Rakesh Kumar Pandey",
+          role: "Marketing",
+          image: "/team/rakesh.png",
           social: {
-            email: "piyushdwivedi8709@gmail.com",
+            email: "rakeshpandey5510@gmail.com",
             linkedin:
-              "https://www.linkedin.com/in/piyush-dwivedi-679319272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              "https://www.linkedin.com/in/rakesh-pandey-493b7435b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
             instagram:
-              "https://www.instagram.com/piyush.dwivedi_27?igsh=MTc5dDI3OHZmMTVz",
+              "https://www.instagram.com/iiamrakeshh?igsh=bTRwb2h3aWdsbzIy&utm_source=qr",
           },
         },
         {
-          id: 46,
+          id: 35,
+          name: "Diptanshu Jaiswal",
+          role: "Marketing",
+          image: "/team/diptanshu.png",
+          social: {
+            email: "diptanshujaiswal2000@gmail.com",
+            linkedin: "http://linkedin.com/in/diptanshu-jaiswal-b765b421b",
+            instagram:
+              "https://www.instagram.com/diptanshu.jaiswal?igsh=bW52MnVzY2Zja2V0",
+          },
+        },
+        {
+          id: 36,
+          name: "Shital Sandhya",
+          role: "Marketing",
+          image: "/team/shital.png",
+          social: {
+            email: "sandhyashital4801@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/shital-sandhya-b83085320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram: "https://www.instagram.com/SHITAL_45341",
+          },
+        },
+        {
+          id: 37,
+          name: "Parth Kumar",
+          role: "Marketing",
+          image: "/team/parth.png",
+          social: {
+            email: "pa825408@gmail.com",
+            linkedin: "https://www.linkedin.com/in/parth-kumar-b023a836a",
+            instagram: "https://www.instagram.com/itsparth_557",
+          },
+        },
+
+        // Finance
+        {
+          id: 38,
+          name: "Samir Kumar",
+          role: "Finance",
+          image: "/team/samir.png",
+          social: {
+            email: "emailonebrown@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/samir-kumar-650520305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/i_samir17?igsh=MTB5Z3R2cjl1MmwxMQ==",
+          },
+        },
+        {
+          id: 39,
+          name: "Rimsha",
+          role: "Finance",
+          image: "/team/rimsha.png",
+          social: {
+            email: "rimsha.iic@bitsindri.ac.in",
+            linkedin:
+              "https://www.linkedin.com/in/rimsha-taslim-5a8724336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/rimshaaax._?igsh=YWtjMGppMXF2dTlt",
+          },
+        },
+
+        // Operations
+        {
+          id: 40,
+          name: "Shashank Gupta",
+          role: "Operations",
+          image: "/team/shashank.png",
+          social: {
+            email: "shashank.sg.6002@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/shashank-gupta-230489338?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/i_have_no_idea000_?igsh=aHNrZGs3ZzB2bmZv&utm_source=ig_contact_invite",
+          },
+        },
+        {
+          id: 41,
+          name: "Anish Kumar",
+          role: "Operations",
+          image: "/team/anish.png",
+          social: {
+            email: "anish2406012@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/anish-kumar-29a9a2336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/anish_official_71?igsh=Nng0OHd2MmM2eDNt",
+          },
+        },
+        {
+          id: 42,
           name: "Maitri",
           role: "Operations",
           image: "/team/maitri.png",
           social: {
-            email:
-              "https://www.instagram.com/maitri__232?igsh=YnplY3lydG0zdzRr",
+            email: "singhmaitri233@gmail.com",
             linkedin: "https://www.linkedin.com/in/maitri-89a17732a",
-            instagram: "singhmaitri233@gmail.com",
+            instagram:
+              "https://www.instagram.com/maitri__232?igsh=YnplY3lydG0zdzRr",
+          },
+        },
+      ],
+    },
+    alumni: {
+      name: "Alumni",
+      members: [
+        {
+          id: 1,
+          name: "Syed Adnan Ahmed",
+          role: "",
+          image: "/team/syedd.png",
+          social: {
+            email: "#",
+            linkedin: "#",
+            instagram: "#",
+          },
+        },
+        {
+          id: 2,
+          name: "Vivek Kumar Tiwari",
+          role: "",
+          image: "/team/vivek_sir.png",
+          social: {
+            email: "#",
+            linkedin: "#",
+            instagram: "#",
+          },
+        },
+        {
+          id: 3,
+          name: "Manohar Jha",
+          role: "",
+          image: "/team/manoharr.png",
+          social: {
+            email: "manoharjha809@gmail.com",
+            linkedin:
+              "https://www.linkedin.com/in/manohar-jha-1b1765257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            instagram:
+              "https://www.instagram.com/_manohar.jha_5?igsh=b2ZkYjExcjV2cmFq",
+          },
+        },
+        {
+          id: 4,
+          name: "Kashish Jain",
+          role: "",
+          image: "/team/kashish_mam.png",
+          social: {
+            email: "skashish2426@gmail.com",
+            linkedin: "https://www.linkedin.com/in/kashish-jain-a92b05256",
+            instagram: "https://www.instagram.com/kashish_7029",
+          },
+        },
+        {
+          id: 5,
+          name: "Harsh Bhargav",
+          role: "",
+          image: "/team/Harsh.png",
+          social: {
+            email: "skashish2426@gmail.com",
+            linkedin: "#",
+            instagram: "#",
+          },
+        },
+        {
+          id: 6,
+          name: "Tisha Aggarwal",
+          role: "",
+          image: "/team/tisha.png",
+          social: {
+            email: "skashish2426@gmail.com",
+            linkedin: "https://www.linkedin.com/in/kashish-jain-a92b05256",
+            instagram: "https://www.instagram.com/kashish_7029",
+          },
+        },
+        {
+          id: 7,
+          name: "Amit Kumar Mishra",
+          role: "",
+          image: "/team/amit.png",
+          social: {
+            email: "skashish2426@gmail.com",
+            linkedin: "https://www.linkedin.com/in/kashish-jain-a92b05256",
+            instagram: "https://www.instagram.com/kashish_7029",
           },
         },
       ],
@@ -834,6 +873,7 @@ const TeamSection = () => {
                     src={member.image}
                     alt={member.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500 hover:scale-125"
                   />
 
@@ -883,11 +923,10 @@ const TeamSection = () => {
               <button
                 key={key}
                 onClick={() => setActiveTeam(key)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeTeam === key
-                    ? "bg-white text-black shadow-lg"
-                    : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/60 hover:text-white"
-                }`}
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${activeTeam === key
+                  ? "bg-white text-black shadow-lg"
+                  : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/60 hover:text-white"
+                  }`}
               >
                 {team.name}
               </button>
@@ -900,9 +939,9 @@ const TeamSection = () => {
               key={activeTeam}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fadeIn"
             >
-              {students[activeTeam].members.map((member, index) => (
+              {students[activeTeam]?.members?.map((member, index) => (
                 <div
-                  key={member.id}
+                  key={`${activeTeam}-${member.id}-${index}`}
                   className="group relative bg-gray-900/50 rounded-2xl overflow-hidden hover:bg-gray-800/60 transition-all duration-300"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -917,6 +956,7 @@ const TeamSection = () => {
                       src={member.image}
                       alt={member.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
 
@@ -924,7 +964,9 @@ const TeamSection = () => {
                       <h3 className="text-white text-xl font-semibold mb-1">
                         {member.name}
                       </h3>
-                      <p className="text-gray-300 text-sm">{member.role}</p>
+                      {member.role && (
+                        <p className="text-gray-300 text-sm">{member.role}</p>
+                      )}
                     </div>
 
                     <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
